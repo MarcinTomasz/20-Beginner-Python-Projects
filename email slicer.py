@@ -1,7 +1,7 @@
 #Program to split user email.
 
 def main():
-    print("Welcom to my email slicer.")
+    print("Welcome to my email slicer.")
     print("")
     
     email_input = input('Input your email address: ')
