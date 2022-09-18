@@ -3,7 +3,8 @@ import ssl
 import smtplib
 
 email_sender = 'marcintm001@gmail.com'
-email_password = 'sihxnwcqbkcngste'
+email_password = '...' #generate password from Google Account
+
 
 email_receiver = 'mtmalek@protonmail.com'
 subject = 'sent from a script'
