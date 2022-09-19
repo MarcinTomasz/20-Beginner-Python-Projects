@@ -12,9 +12,18 @@ lists = soup.find_all('div', class_= 'EstateItem-1c115')
 
 with open('flats.csv', 'w', encoding='utf8', newline= '') as f:
     thewriter=writer(f)
-    header= ['Title', 'Location', 'Price', 'Area']
+    header= ['Price', 'Area', 'Rooms']
     thewriter.writerow(header)
+
+    flats= []
     
-for list in lists:
-    price = list.find('div', class= 'KeyFacts-efbce')
-    
+    for list in lists:
+        #title= list.find('div', 'h2').text
+        price= list.find('div', attrs= {'data-test':'price'}).text
+        area= list.find('div', attrs= {'data-test':'area'}).text
+        rooms= list.find('div', attrs= {'data-test':'rooms'}).text
+        info= [price, area, rooms]
+        thewriter.writerow(info)
+        flats.append(info)
+
+print(flats)
